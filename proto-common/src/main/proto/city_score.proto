@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package cityscore;
+
+option java_package = "com.nils.gprc.cityscore";
+option java_multiple_files = true;
+
+message CityScoreRequest {
+  int32 city_code = 1;
+}
+
+message CityScoreResponse {
+  int32 city_score = 1;
+}
+
+enum CityScoreErrorCode {
+  INVALID_CITY_CODE_VALUE = 0;
+  CITY_CODE_CANNOT_BE_NULL = 1;
+}
+
+message CityScoreExceptionResponse {
+  google.protobuf.Timestamp timestamp = 1;
+  CityScoreErrorCode error_code = 2;
+}
+
+service CityScoreService {
+  // unary
+  rpc calculateCityScore(CityScoreRequest) returns (CityScoreResponse) {};
+}
