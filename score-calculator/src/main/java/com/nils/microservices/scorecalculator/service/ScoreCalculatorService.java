@@ -3,7 +3,6 @@ package com.nils.microservices.scorecalculator.service;
 import com.google.protobuf.Any;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.UInt64Value;
-import com.google.rpc.ErrorInfo;
 import com.google.rpc.Status;
 import com.nils.gprc.cityscore.CityScoreExceptionResponse;
 import com.nils.gprc.cityscore.CityScoreRequest;
